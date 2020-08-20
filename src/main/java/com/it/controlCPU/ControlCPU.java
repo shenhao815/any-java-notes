@@ -1,4 +1,4 @@
-package controlCPU;
+package com.it.controlCPU;
 
 /**
  * @author CH

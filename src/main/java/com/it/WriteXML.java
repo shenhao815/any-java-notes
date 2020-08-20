@@ -1,3 +1,5 @@
+package com.it;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -77,7 +79,7 @@ public class WriteXML {
         Element trim0 = (Element) insertSelective.getElementsByTagName("trim").item(0);
         NodeList ifs = trim0.getElementsByTagName("if");
         Element ifele = document.createElement("if");
-        ifele.setAttribute("test","orgName != null and orgName != ''");
+        ifele.setAttribute("com/it/test","orgName != null and orgName != ''");
         ifele.setTextContent("org_name,");
         Element refIfs = (Element) ifs.item(ifs.getLength());
         trim0.insertBefore(ifele, refIfs);
@@ -85,7 +87,7 @@ public class WriteXML {
         Element trim1 = (Element) insertSelective.getElementsByTagName("trim").item(1);
         NodeList ifs1 = trim0.getElementsByTagName("if");
         Element ifele1 = document.createElement("if");
-        ifele1.setAttribute("test","orgName != null and orgName != ''");
+        ifele1.setAttribute("com/it/test","orgName != null and orgName != ''");
         ifele1.setTextContent("#{orgName,jdbcType=VARCHAR},");
         Element refIfs1 = (Element) ifs1.item(ifs1.getLength());
         trim1.insertBefore(ifele1, refIfs1);
@@ -95,7 +97,7 @@ public class WriteXML {
         Element nSet = (Element) updateSelective.getElementsByTagName("set").item(0);
         NodeList upifs = nSet.getElementsByTagName("if");
         Element upele = document.createElement("if");
-        upele.setAttribute("test","orgName != null and orgName != ''");
+        upele.setAttribute("com/it/test","orgName != null and orgName != ''");
         upele.setTextContent(" org_name = #{orgName,jdbcType=VARCHAR},");
         Element upref = (Element) upifs.item(upifs.getLength());
         nSet.insertBefore(upele, upref);
