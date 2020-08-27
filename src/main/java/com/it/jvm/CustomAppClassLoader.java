@@ -11,8 +11,7 @@ import java.util.regex.Matcher;
 public class CustomAppClassLoader extends ClassLoader {
 
     private final String fileExtension = ".class";
-    private String classLoaderName;
-    private String path = "C:\\Users\\Neo\\Desktop\\";
+    private String path = "C:\\Users\\Administrator\\Desktop\\";
 
 
     public CustomAppClassLoader(){}
@@ -23,7 +22,6 @@ public class CustomAppClassLoader extends ClassLoader {
 
     @Override
     public Class<?> findClass(String className) throws ClassNotFoundException {
-        System.out.println("class loader name: "+ this.classLoaderName);
         byte[] data = this.loadClassData(className);
         return this.defineClass(className,data,0,data.length);
     }
